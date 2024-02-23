@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Web Page</title>
-  </head>
-  <body>
-    <iframe src="web/index.html" width="100vw" height="100vh"></iframe>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <include src="web/index.html"></include>
+
+  <script>
+    (() => {
+      const includes = document.getElementsByTagName('include');
+      [].forEach.call(includes, i => {
+        let filePath = i.getAttribute('src');
+        fetch(filePath)
+          .then(file => {
+            file.text().then(content => {
+              i.insertAdjacentHTML('afterend', content);
+              i.remove();
+            });
+          });
+      });
+    })();
+  </script>
+</body>
 </html>
