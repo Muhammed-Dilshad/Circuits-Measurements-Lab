@@ -1,27 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <include src="web/index.html"></include>
 
-  <script>
-    (() => {
-      const includes = document.getElementsByTagName('include');
-      [].forEach.call(includes, i => {
-        let filePath = i.getAttribute('src');
-        fetch(filePath)
-          .then(file => {
-            file.text().then(content => {
-              i.insertAdjacentHTML('afterend', content);
-              i.remove();
-            });
-          });
-      });
-    })();
-  </script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Your Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <div class="name">LabWeb</div>
+    </header>
+    <div class="grid">
+        <div class="cell1" >
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h1>LVDT</h1>
+                    </div>
+                    <div class="card-back">
+                        <a href="web/index.html" target="_blank">Open</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell2" class="grid-item">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p>coming soon</p>
+                    </div>
+                    <div class="card-back">
+                        <p>coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell3" class="grid-item">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p>coming soon</p>
+                    </div>
+                    <div class="card-back">
+                        <p>coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell4" class="grid-item">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p>coming soon</p>
+                    </div>
+                    <div class="card-back">
+                        <p>coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell5" class="grid-item">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p>coming soon</p>
+                    </div>
+                    <div class="card-back">
+                        <p>coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell6" class="grid-item">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <p>coming soon</p>
+                    </div>
+                    <div class="card-back">
+                        <p>coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+<p>&copy; <img src="C:\Users\DILSHADMUMHAMMUD\OneDrive\Desktop\Untitled-1.ai">LaluTech</p>
+
 </html>
