@@ -6,6 +6,9 @@
     font-style: normal;
 
 }
+html{
+    scroll-behavior:smooth;
+}
 
 .body{
     display:flex;
@@ -155,10 +158,12 @@
 }
 
 .sidebar h3 {
+    margin: 0px;
     margin-top: 0;
 }
 
 .sidebar h4 {
+    margin: 0px;
     color: #ff0000;
 }
 
@@ -168,11 +173,11 @@
 }
 
 .sidebar li {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 footer{
-    margin-top: 10vh;
+    margin-top: 2vh;
     background-color: #000000;
     width: 98vw;
     justify-content: center;
