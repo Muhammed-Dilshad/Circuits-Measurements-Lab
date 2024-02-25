@@ -1,6 +1,7 @@
 body {
     justify-content: center;
     margin: 0;
+    overflow-x: hidden;
 }
 
 header {
@@ -12,7 +13,7 @@ header {
 }
 
 .name {
-    font-family: cursive;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     align-self: center;
     font-size: 700%;
 }
@@ -44,9 +45,9 @@ header {
 .card-inner {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: fixed;
     transform-style: preserve-3d;
-    transition: transform 0.999s;
+    transition: transform 0.599s ease-in-out;
 }
 
 .card:hover .card-inner {
@@ -105,3 +106,18 @@ header {
     font-size: 24px;
     transform: rotateY(180deg);
 }
+footer{
+    margin-top: 10vh;
+    background-color: #000000;
+    width: 99vw;
+    justify-content: center;
+
+}
+#contact {
+    margin-left: 45%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:#ffff;
+    font-size: 20px;
+    width: fit-content;
+}   

@@ -10,19 +10,36 @@
     <title>LVDT</title>
 </head>
 <body>
+    <div class="body">
 <div id="mainframe">
     <button class="button" onclick="poweron()">
         dddd
     </button>
-    <div id="screen"> 
+    <div id="screen1"> 
         88.88
+    </div>
+    <div id="outputadj">
+        <div class="display0">
+        <div id="screen3">
+            0
+        </div>
+        <input type="checkbox" name="MS" id="mainscale2">
+        </div>
+        <div class="buttons2">
+            <button class="cntrl" onclick="cvalue(1)">
+                +
+            </button>
+            <button class="cntrl" onclick="cvalue(0)">
+                -
+            </button>
+        </div>
     </div>
     <div id="displacement">
         <div class="display">
         <div id="screen2">
             0
         </div>
-        <input type="checkbox" name="MS" id="mainscale">
+        <input type="checkbox" name="MS" id="mainscale1">
         </div>
             <div class="buttons">
             <button class="cntrl" onclick="changevalue(1)">
@@ -34,9 +51,35 @@
         </div>
     </div>
 </div>
+<div class="sidebar">
+    <h1>Instructions</h1>
+    <h2>Standardization</h2>
+    <ol>
+        <li><strong>Set LVDT arm at zero position:</strong></li>
+        <p>Adjust the screw gauge to read 10mm. Vary the excitation amplitude adjustment amplifier and set the display value as zero.</p>
+
+        <li><strong>Set LVDT arm at +10:</strong></li>
+        <p>Adjust the screw gauge to read 0mm. Note the display reading and correct it if it is not correct.</p>
+
+        <li><strong>Set LVDT arm at -10:</strong></li>
+        <p>Adjust the screw gauge to read 20mm. If the display reading is not -10, correct it by varying the excitation amplitude adjustment amplifier.</p>
+    </ol>
+    <h4>Disclaimer:Recommend Standerdising before taking readings</h4>
+    <h2>Measurement</h2>
+    <ol>
+        <li><strong>Set LVDT arm at 0:</strong></li>
+        <p>Vary the arm position in steps using the screw gauge. In each case, note down the display readings and LVDT output voltage measured by using a multimeter.</p>
+    </ol>
+</div>
+</div>
 <footer>
-    <p>&copy; <img src="C:\Users\DILSHADMUMHAMMUD\OneDrive\Desktop\Untitled-1.ai">LaluTech</p>
+    <div id="contact"> 
+        Developers <br><br>
+        <a href="youtube.com">Muhammed Dilshad K</a><br>
+        <a href="facebook.com">Aswinlal K S</a>
+        <p>&copy;2024</p>
+    </div>
 </footer>
-<script src="script.js"></script>
 </body>
+<script src="script.js"></script>
 </html>

@@ -7,7 +7,13 @@
 
 }
 
+.body{
+    display:flex;
+    flex-direction: row-reverse;
+}
+
 #mainframe {
+    margin-left: 1vw;
     background-image: url("Frame 1 t-2.png");
     background-repeat: no-repeat;
     background-position: left;
@@ -29,7 +35,7 @@
     border: solid 4px #000
 }
 
-#screen {
+#screen1 {
     background-color: rgb(87, 87, 87);
     color: rgb(66, 55, 55);
     text-align: center;
@@ -41,6 +47,56 @@
     margin: 29px 0px 0px 881px;
 }
 
+#outputadj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ff4444;
+    border: solid 2px black;
+    width: 102px;
+    height: 64px;
+    margin: 129px 0px 0px 1084px;
+    padding: 5px;
+
+}
+
+.display0 {
+    display: flex;
+    flex-direction: row;
+}
+
+
+#screen3 {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    width: 60px;
+    padding: 1px 5px 1px 5px;
+    border: solid 1px black;
+}
+
+.buttons2 {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    color: azure;
+    width: fit-content;
+    margin: 5px 5px 0px 5px;
+}
+
+.buttons2 button {
+    background-color: aqua;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: 1000px;
+    text-align: center;
+    margin: 0px 5px 0px 2px;
+    height: 30px;
+    width: 40px;
+}
+
+
 #displacement {
     display: flex;
     flex-direction: column;
@@ -49,15 +105,15 @@
     border: solid 2px black;
     width: 102px;
     height: 64px;
-    margin: 329px 0px 0px 984px;
+    margin: 123px 0px 0px 984px;
     padding: 5px;
-
 }
 
 .display {
     display: flex;
     flex-direction: row;
 }
+
 
 #screen2 {
     background-color: transparent;
@@ -87,4 +143,46 @@
     margin: 0px 5px 0px 2px;
     height: 30px;
     width: 40px;
+}
+.sidebar {
+    width: 500%;
+    float: right;
+    background-color: #4f64d8e3;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar h4 {
+    color: #ff0000;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+footer{
+    margin-top: 10vh;
+    background-color: #000000;
+    width: 98vw;
+    justify-content: center;
+}
+#contact {
+    margin-left: 45%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color:#ffff;
+    font-size: 20px;
+    width: fit-content;
+
 }
