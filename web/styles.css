@@ -6,12 +6,13 @@
     font-style: normal;
 
 }
-html{
-    scroll-behavior:smooth;
+
+html {
+    scroll-behavior: smooth;
 }
 
-.body{
-    display:flex;
+.body {
+    display: flex;
     flex-direction: row-reverse;
 }
 
@@ -25,7 +26,7 @@ html{
     width: auto;
 }
 
-.button {
+.power {
     background-color: rgb(187, 0, 0);
     color: aliceblue;
     font-size: 30px;
@@ -50,15 +51,21 @@ html{
     margin: 29px 0px 0px 881px;
 }
 
-#outputadj {
+.adj {
+    display: flex;
+    flex-direction: row;
+}
+
+#exctadj {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ff4444;
-    border: solid 2px black;
+    background-color: #ff7f7f;
+    border: solid 4px black;
+    border-radius: 9px;
     width: 102px;
     height: 64px;
-    margin: 129px 0px 0px 1084px;
+    margin: 140px 0px 0px 45px;
     padding: 5px;
 
 }
@@ -70,7 +77,7 @@ html{
 
 
 #screen3 {
-    background-color: transparent;
+    background-color: gray;
     color: rgb(255, 255, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 17px;
@@ -89,8 +96,9 @@ html{
 }
 
 .buttons2 button {
-    background-color: aqua;
-    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(0, 0, 0);
+    color: #ccc;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     font-weight: 1000px;
     text-align: center;
@@ -99,16 +107,30 @@ html{
     width: 40px;
 }
 
+#output {
+    background-color: #ff7f7f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 30px;
+    height: 60px;
+    width: 110px;
+    margin: 107px 0px 0px 930px;
+    border: solid 4px black;
+    border-radius: 9px;
+}
+
 
 #displacement {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ff0000;
+    background-color: #ffffff;
     border: solid 2px black;
     width: 102px;
     height: 64px;
-    margin: 123px 0px 0px 984px;
+    margin: 107px 0px 0px 983px;
     padding: 5px;
 }
 
@@ -119,7 +141,7 @@ html{
 
 
 #screen2 {
-    background-color: transparent;
+    background-color: gray;
     color: rgb(255, 255, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 17px;
@@ -138,7 +160,8 @@ html{
 }
 
 .buttons button {
-    background-color: aqua;
+    background-color: #000;
+    color: #ccc;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     font-weight: 1000px;
@@ -147,6 +170,7 @@ html{
     height: 30px;
     width: 40px;
 }
+
 .sidebar {
     width: 500%;
     float: right;
@@ -176,17 +200,74 @@ html{
     margin-bottom: 0px;
 }
 
-footer{
+#table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.plot {
+    height: 40px;
+    width: 80px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: fit-content;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    z-index: 9999;
+    /* Ensure it appears above other elements */
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
     margin-top: 2vh;
     background-color: #000000;
     width: 98vw;
     justify-content: center;
 }
+
 #contact {
     margin-left: 45%;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    color:#ffff;
+    color: #ffff;
     font-size: 20px;
     width: fit-content;
 

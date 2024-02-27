@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,78 +9,125 @@
     <link rel="icon" href="logo1.png" type="image/x- ico">
     <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
     <title>LVDT</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <div class="body">
-<div id="mainframe">
-    <button class="button" onclick="poweron()">
-        dddd
-    </button>
-    <div id="screen1"> 
-        88.88
-    </div>
-    <div id="outputadj">
-        <div class="display0">
-        <div id="screen3">
-            0
-        </div>
-        <input type="checkbox" name="MS" id="mainscale2">
-        </div>
-        <div class="buttons2">
-            <button class="cntrl" onclick="cvalue(1)">
-                +
-            </button>
-            <button class="cntrl" onclick="cvalue(0)">
-                -
-            </button>
-        </div>
-    </div>
-    <div id="displacement">
-        <div class="display">
-        <div id="screen2">
-            0
-        </div>
-        <input type="checkbox" name="MS" id="mainscale1">
-        </div>
-            <div class="buttons">
-            <button class="cntrl" onclick="changevalue(1)">
-                +
-            </button>
-            <button class="cntrl" onclick="changevalue(0)">
-                -
-            </button>
-        </div>
-    </div>
-</div>
-<div class="sidebar">
-    <h1>Instructions</h1>
-    <h2>Standardization</h2>
-    <ol>
-        <li><strong>Set LVDT arm at 0 position:</strong></li>
-        <p>Adjust the screw gauge to read 10mm. Vary the excitation amplitude adjustment amplifier and set the display value as zero.</p>
+        <div id="mainframe">
+            <button class="power" onclick="poweron()">
 
-        <li><strong>Set LVDT arm at +10:</strong></li>
-        <p>Adjust the screw gauge to read 0mm. Note the display reading and correct it if it is not correct.</p>
+            </button>
+            <div id="screen1">
+                88.88
+            </div>
+            <div class="adj">
+                <div id="exctadj">
+                    <div class="display0">
+                        <div id="screen3">
+                            0
+                        </div>
+                        <input type="checkbox" name="MS" id="mainscale2">
+                    </div>
+                    <div class="buttons2">
+                        <button class="cntrl" onclick="cvalue(1)">
+                            +
+                        </button>
+                        <button class="cntrl" onclick="cvalue(0)">
+                            -
+                        </button>
+                    </div>
+                    <h4 style="margin: 5px">Output</h4>
+                </div>
+                <div id="output">
+                    --.--
+                </div>
+            </div>
+            <div id="displacement">
+                <div class="display">
+                    <div id="screen2">
+                        0
+                    </div>
+                    <input type="checkbox" name="MS" id="mainscale1">
+                </div>
+                <div class="buttons">
+                    <button class="cntrl" onclick="changevalue(1)">
+                        +
+                    </button>
+                    <button class="cntrl" onclick="changevalue(0)">
+                        -
+                    </button>
+                </div>
+                <h4 style="margin: 5px">Screw_Guage_(mm)</h4>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div id="Inst">
+                <h1>Instructions</h1>
+                <h2>Standardization</h2>
+                <ol>
+                    <li><strong>Set LVDT arm at 0 position:</strong></li>
+                    <p>Adjust the screw gauge to read 10mm. Vary the excitation amplitude adjustment amplifier and set
+                        the display value as zero.</p>
 
-        <li><strong>Set LVDT arm at -10:</strong></li>
-        <p>Adjust the screw gauge to read 20mm. If the display reading is not -10, correct it by varying the excitation amplitude adjustment amplifier.</p>
-    </ol>
-    <h4>Disclaimer: Standardization is Recommended for Accurate Readings</h4>
-    <h2>Measurement</h2>
-    <ol>
-        <li><strong>Set LVDT arm at 0:</strong></li>
-        <p>Vary the arm position in steps using the screw gauge. In each case, note down the display readings and LVDT output voltage measured by using a multimeter.</p>
-    </ol>
-</div>
-</div>
-<footer>
-    <div id="contact"> 
-        Developers <br><br>
-        <a href="youtube.com">Muhammed Dilshad K</a><br>
-        <a href="facebook.com">Aswinlal K S</a>
-        <p>&copy;2024</p>
+                    <li><strong>Set LVDT arm at +10:</strong></li>
+                    <p>Adjust the screw gauge to read 0mm. Note the display reading and correct it if it is not correct.
+                    </p>
+
+                    <li><strong>Set LVDT arm at -10:</strong></li>
+                    <p>Adjust the screw gauge to read 20mm. If the display reading is not -10, correct it by varying the
+                        excitation amplitude adjustment amplifier.</p>
+                </ol>
+                <h4>Disclaimer: Standardization is Recommended for Accurate Readings</h4>
+                <h2>Measurement</h2>
+                <ol>
+                    <li><strong>Set LVDT arm at 0:</strong></li>
+                    <p>Vary the arm position in steps using the screw gauge. In each case, note down the display
+                        readings and LVDT output voltage measured by using a multimeter.</p>
+                </ol>
+                <ol>
+                    <button onclick="startplotting()" style="background-color: burlywood; border:solid 2px black;">Start
+                        Plotting</button>
+                </ol>
+            </div>
+            <div id="table" style="display: none;">
+                <button onclick="plot()" class="plot">Plot</button>
+                <table id="myTable">
+                    <tr>
+                        <th>Index</th>
+                        <th>Displacement (mm)</th>
+                        <th>voltage (mV)</th>
+                    </tr>
+                </table>
+                <button onclick="plotgraph()" class="plot">Plot graph</button>
+            </div>
+            <div class="dialogbox">
+                <button onclick="openDialog()">Open Dialog Box</button>
+                <div id="dialogOverlay" class="dialog-overlay">
+                    <div id="dialogContent" class="dialog-content">
+                        <h2>This is a big dialog box</h2>
+                        <div id="chartContainer" style="width: 80%; margin: 20px auto;">
+                            <!-- Chart will be rendered here -->
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur ante vel dapibus
+                            scelerisque.
+                        </p>
+                        <button onclick="closeDialog()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</footer>
+    <footer>
+        <div id="contact">
+            Developers <br><br>
+            <a href="youtube.com">Muhammed Dilshad K</a><br>
+            <a href="facebook.com">Aswinlal K S</a>
+            <p>&copy;2024</p>
+        </div>
+    </footer>
 </body>
 <script src="script.js"></script>
+
 </html>

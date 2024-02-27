@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="addRow()">Add Row</button>
+    <table id="myTable">
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </table>
+    <script>
+        function addRow() {
+            const table = document.getElementById("myTable");
+            const rowCount = table.rows.length;
+            const row = table.insertRow(rowCount);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            cell1.innerHTML = "Row " + rowCount + ", Column 1";
+            cell2.innerHTML = "Row " + rowCount + ", Column 2";
+        }
+    </script>
+</body>
+
+</html>
