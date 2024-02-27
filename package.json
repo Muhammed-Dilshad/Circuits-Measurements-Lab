@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "express": "^4.18.2",
-    "nodeplotlib": "^1.1.2"
-  }
-}
